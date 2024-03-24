@@ -33,6 +33,7 @@ main {
   width: 150px;
   background-color: transparent;
   border: 5px solid black;
+  transition: all 0.4s;
 }
 .play {
   transform: scale(1.1);
