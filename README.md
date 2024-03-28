@@ -33,3 +33,7 @@ So what are you waiting for? The code won't write itself! Strap in, hold on tigh
 ---
 
 Now, go forth and code like there's no tomorrow! 💻✨
+
+---
+
+*This challenge is inspired by [JavaScript30](https://javascript30.com/) by Wes Bos.*
