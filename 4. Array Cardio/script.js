@@ -112,16 +112,86 @@ const names = [
 // Filter the list of inventors who were born after 1900's to 1999's?
 
 const filter = inventors.filter(function (inventor) {
-  return ;
+  if (inventor.year >= 1900 && inventor.year < 2000) {
+    return inventor.year;
+  }
 });
 
-//Array Prototype.map()
+console.table("Filter", filter);
+
+// Array Prototype.map()
 // Give us an array of the inventory with first and last names?
+
+const firstLast = inventors.map(function (inventor) {
+  return `${inventor.first} ${inventor.last}`;
+});
+
+console.table("First Last", firstLast);
 
 // Array Prototype.sort()
 // Sort the inventors by the birthdate, oldest to youngest?
 
+const sort = inventors.sort(function (a, b) {
+  return a.year > b.year ? 1 : -1;
+});
+console.table("Sort", sort);
+
 // Array Prototype.reduce()
 // How many years did all the inventors live?
 
-// Sort the inventors by years lived
+const age = inventors.reduce((total, inventor) => {
+  return total + (inventor.passed - inventor.year);
+}, 0);
+console.log(age);
+
+// Sort the inventors by years lived?
+
+const yearsLived = inventors.sort(function (a, b) {
+  let years = a.passed - a.year;
+  let passed = b.passed - b.year;
+
+  return passed > years ? 1 : -1;
+});
+
+console.table("Years Lived", yearsLived);
+
+// Create a list of Boulevards in Paris that contains "de" anywhere in the name?
+
+// const category = document.querySelector(".mw-category");
+// const links = Array.from(category.querySelectorAll("a"));
+
+// const de = links
+//   .map((link) => link.textContent)
+//   .filter((link) => link.includes("de"));
+
+// Reduce Exercises
+// Sum up the instances of each of these
+
+const vehicles = [
+  "car",
+  "truck",
+  "motorcycle",
+  "bus",
+  "van",
+  "bicycle",
+  "scooter",
+  "train",
+  "car",
+  "car",
+  "truck",
+  "bus",
+  "van",
+  "scooter",
+  "train",
+  "train",
+];
+
+const transport = vehicles.reduce(function (obj, item) {
+  if (!obj[item]) {
+    obj[item] = 0;
+  }
+  obj[item]++;
+  return obj;
+}, []);
+
+console.log(transport);
