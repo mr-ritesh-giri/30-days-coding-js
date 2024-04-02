@@ -1,16 +1,17 @@
 const panels = document.querySelectorAll(".panel");
 
 panels.forEach(function (panel) {
-  const h2 = panel.querySelector("h2");
-  const h3 = panel.querySelector("h3");
+  const firstPara = panel.querySelector("p:first-child");
+  const lastPara = panel.querySelector("p:last-child");
   panel.addEventListener("mouseover", function () {
     this.classList.add("open");
-    h2.classList.add("active");
-    h3.classList.add("active");
+    firstPara.style.transform = "translateY(0)";
+    lastPara.style.transform = "translateY(0)";
   });
   panel.addEventListener("mouseleave", function () {
     this.classList.remove("open");
-    h2.classList.remove("active");
-    h3.classList.remove("active");
+
+    firstPara.style.transform = "translateY(-400%)";
+    lastPara.style.transform = "translateY(400%)";
   });
 });
