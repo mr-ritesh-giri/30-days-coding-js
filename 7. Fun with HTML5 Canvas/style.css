@@ -10,6 +10,12 @@ body {
 }
 .color-picker {
   position: absolute;
-  top: 10px;
+  top: 20px;
   left: 10px;
+  border: none;
+  height: 50px;
+  width: 100px;
+}
+.color-picker:hover {
+  scale: 1.1;
 }

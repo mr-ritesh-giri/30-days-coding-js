@@ -3,7 +3,7 @@ const ctx = canvas.getContext("2d");
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
 
-ctx.strokeStyle = "#BADA55";
+ctx.strokeStyle = "#BADDA5";
 ctx.lineCap = "round";
 ctx.lineJoin = "round";
 ctx.lineWidth = 10;
@@ -37,7 +37,7 @@ canvas.addEventListener("mouseout", () => {
 });
 
 // Color Picker
-const colorPicker = document.querySelector("#colorPicker");
+const colorPicker = document.querySelector(".color-picker");
 colorPicker.addEventListener("input", (e) => {
   currentColor = e.target.value;
   ctx.strokeStyle = currentColor;
